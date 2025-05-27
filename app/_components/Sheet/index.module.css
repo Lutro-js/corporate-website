@@ -1,8 +1,18 @@
-.container {
-    position: relative;
-    background-color: #ffffff;
-    width: 840px;
-    margin: -40px auto 0;
-    padding: 80px;
-    border-radius: 8px;
+    .container {
+        position: relative;
+        background-color: #ffffff;
+        margin: -40px auto 0;
+        padding: 80px;
+        border-radius: 8px;
+    }   
+
+@media (min-width: 769px) {
+    .container {
+        position: relative;
+        background-color: #ffffff;
+        width: 840px;
+        margin: -40px auto 0;
+        padding: 80px;
+        border-radius: 8px;
+    }   
 }

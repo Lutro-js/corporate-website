@@ -10,13 +10,6 @@
     margin-bottom: 80px;
 }
 
-.list {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
 .list:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -56,4 +49,13 @@
 
 .empty {
     margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
 }
