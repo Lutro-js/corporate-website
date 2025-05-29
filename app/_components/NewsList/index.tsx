@@ -29,7 +29,7 @@ export default function NewsList({ news }: Props) {
                             />
                         ) : (
                             <Image
-                                className={styles.iamge}
+                                className={styles.image}
                                 src="/no-image.png"
                                 alt="No Image"
                                 width={1200}
