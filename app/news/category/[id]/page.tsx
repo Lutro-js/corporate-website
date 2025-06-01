@@ -1,4 +1,4 @@
-import { getCategoryDetails, getNewsList } from "@/app/_libs/microcms";
+import { getCategoryDetail, getNewsList } from "@/app/_libs/microcms";
 import { notFound } from "next/navigation";
 import NewsList from "@/app/_components/NewsList";
 import Pagination from "@/app/_components/Pagination";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-    const category = await getCategoryDetails(params.id).catch(notFound);
+    const category = await getCategoryDetail(params.id).catch(notFound);
 
     const { contents: news, totalCount } = await getNewsList({
         limit: NEWS_LIST_LIMIT,
