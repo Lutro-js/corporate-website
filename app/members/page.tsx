@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css"
-import { getMemberList } from "../_libs/microcms";
+import { getMembersList } from "../_libs/microcms";
 import { MEMBERS_LIST_LIMIT } from "@/app/_constants";
 
 export default async function Page() {
-    const data = await getMemberList({ limit: MEMBERS_LIST_LIMIT });
+    const data = await getMembersList({ limit: MEMBERS_LIST_LIMIT });
     return (
         <div className={styles.container}>
             {data.contents.length === 0 ? (
