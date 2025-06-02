@@ -7,12 +7,13 @@ import { NEWS_LIST_LIMIT } from "@/app/_constants";
 
 
 type Props = {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 };
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+    const params = await props.params;
     const category = await getCategoryDetail(params.id).catch(notFound);
 
     const { contents: news, totalCount } = await getNewsList({
