@@ -23,7 +23,7 @@ export default function Menu() {
                     <Link href="/members">メンバー</Link>
                 </li>
                 <li>
-                    <Link href="/news">お問い合わせ</Link>
+                    <Link href="/contact">お問い合わせ</Link>
                 </li>
             </ul>
             <button className={cx(styles.button, styles.close)} onClick={close}>
