@@ -1,6 +1,10 @@
 import Hero from "@/app/_components/Hero";
 import Sheet from "../_components/Sheet";
 
+export const metadata = {
+    titile: "ニュース",
+};
+
 type Props = {
     children: React.ReactNode;
 };
