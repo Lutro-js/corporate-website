@@ -24,7 +24,7 @@ export default function Pagination({
         {pages.map((p) => (
           <li className={styles.list} key={p}>
             {current !== p ? (
-              <Link href={`${basePath}/p/${p}`} className={styles.item}>
+              <Link href={p === 1 ? basePath : `${basePath}/p/${p}`} className={styles.item}>
                 {p}
               </Link>
             ) : (
