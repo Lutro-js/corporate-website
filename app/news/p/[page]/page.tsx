@@ -7,20 +7,15 @@ import { NEWS_LIST_LIMIT } from '@/app/_constants';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: {
+  params: Promise<{
+    id: string;
     page: string;
-  };
+  }>;
 };
 
-export async function generateStaticParams() {
-  const totalPages = 5; // ←本来は totalCount を使って算出
-  return Array.from({ length: totalPages }, (_, i) => ({
-    page: (i + 1).toString(),
-  }));
-}
-
 export default async function Page({ params }: Props) {
-  const currentPage = Number(params.page);
+  const resolvedParams = await params;
+  const currentPage = Number(resolvedParams.page);
 
   if (isNaN(currentPage) || currentPage < 1) {
     notFound();
@@ -39,7 +34,7 @@ export default async function Page({ params }: Props) {
       <Pagination
         totalCount={totalCount}
         current={currentPage}
-        basePath="/news/p"
+        basePath={`/news/category/${resolvedParams.id}/p`}
       />
     </>
   );
