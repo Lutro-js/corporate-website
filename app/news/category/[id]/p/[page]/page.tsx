@@ -7,9 +7,9 @@ import { NEWS_LIST_LIMIT } from "@/app/_constants";
 
 
 type Props = {
-    params: Promise<{
+    params: {
         id: string;
-    }>;
+    };
 };
 
 export default async function Page(props: Props) {

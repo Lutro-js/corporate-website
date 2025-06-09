@@ -4,9 +4,9 @@ import NewsList from '@/app/_components/NewsList';
 import SearchField from '@/app/_components/SearchField';
 
 type Props = {
-  searchParams: Promise<{
+  searchParams: {
     q?: string;
-  }>;
+  };
 };
 
 export default async function Page(props: Props) {

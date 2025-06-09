@@ -16,14 +16,11 @@ export async function generateMetadata({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ dk?: string }>;
+  params: { slug: string };
+  searchParams: { dk?: string };
 }): Promise<Metadata> {
-  const resolvedParams = await params;
-  const resolvedSearchParams = await searchParams;
-
-  const data = await getNewsDetail(resolvedParams.slug, {
-    draftKey: resolvedSearchParams.dk,
+  const data = await getNewsDetail(params.slug, {
+    draftKey: searchParams.dk,
   });
 
   return {
@@ -41,14 +38,11 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ dk?: string }>;
+  params: { slug: string };
+  searchParams: { dk?: string };
 }) {
-  const resolvedParams = await params;
-  const resolvedSearchParams = await searchParams;
-
-  const data = await getNewsDetail(resolvedParams.slug, {
-    draftKey: resolvedSearchParams.dk,
+  const data = await getNewsDetail(params.slug, {
+    draftKey: searchParams.dk,
   }).catch(notFound);
 
   return (
