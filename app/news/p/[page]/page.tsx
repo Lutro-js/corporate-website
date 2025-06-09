@@ -34,7 +34,7 @@ export default async function Page({ params }: Props) {
       <Pagination
         totalCount={totalCount}
         current={currentPage}
-        basePath={`/news/category/${resolvedParams.id}/p`}
+        basePath={`/news`}
       />
     </>
   );
